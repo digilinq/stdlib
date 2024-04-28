@@ -5,16 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.eightbits.shared</groupId>
-    <artifactId>stdlib-parent</artifactId>
-    <version>1.0.0</version>
-    <packaging>pom</packaging>
+    <artifactId>stdlib</artifactId>
+    <version>1.0.1</version>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <maven.deploy.skip>true</maven.deploy.skip>
+        <maven.deploy.skip>false</maven.deploy.skip>
 
         <junit-jupiter.version>5.10.2</junit-jupiter.version>
         <mockito.version>5.11.0</mockito.version>
@@ -23,14 +23,7 @@
         <logback.version>1.2.10</logback.version>
     </properties>
 
-    <modules>
-        <module>stdlib</module>
-    </modules>
-
     <build>
-        <pluginManagement>
-
-        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
