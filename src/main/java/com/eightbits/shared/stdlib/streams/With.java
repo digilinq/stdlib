@@ -2,6 +2,28 @@ package com.eightbits.shared.stdlib.streams;
 
 import java.util.function.Function;
 
+/**
+ * A class that wraps a value and allows to perform operations on it.
+ * @param <T> the type of the value
+ *           <p>
+ *           Example:
+ *           <pre>{@code
+ *           With<String> result = With.value(5).map(String::valueOf);
+ *           assertEquals("5", result.get());
+ *           }</pre>
+ *           <p>
+ *           <pre>{@code
+ *           Integer value = 5;
+ *           With<Integer> result = With.value(5).perform(x -> x + 1);
+ *           assertEquals(6, result.get());
+ *           }</pre>
+ *           <p>
+ *           <pre>{@code
+ *           With<Integer> result = With.value(null);
+ *           assertEquals(5, result.orElse(5));
+ *           }</pre>
+ *           <p>
+ */
 public class With<T> {
     private final T value;
 
