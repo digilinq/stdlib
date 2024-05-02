@@ -25,34 +25,68 @@ import java.util.function.Function;
  *           <p>
  */
 public class With<T> {
+
     private final T value;
 
+    /**
+     * Constructor
+     * @param value the value to wrap
+     */
     private With(T value) {
         this.value = value;
     }
 
+    /**
+     * Factory method to create a new instance of With
+     * @param value the value to wrap
+     * @return a new instance of With
+     */
     public static <T> With<T> value(T value) {
         return new With<>(value);
     }
 
+    /**
+     * Perform an operation on the value
+     * @param f the function to apply
+     * @return a new instance of With
+     */
     public <R> With<R> perform(Function<T, R> f) {
         return With.value(f.apply(value));
     }
 
+    /**
+     * Map the value to another value
+     * @param mapper the function to apply
+     * @return a new instance of With
+     */
     public <R> With<R> map(Function<T, R> mapper) {
         return With.value(mapper.apply(value));
     }
 
+    /**
+     * Return the value if it is not null, otherwise return the other value
+     * @param other the value to return if the value is null
+     * @return the value if it is not null, otherwise return the other value
+     */
     public T orElse(T other) {
         if (value == null)
             return other;
         return value;
     }
 
+    /**
+     * Get the value
+     * @return the value
+     */
     public T get() {
         return value;
     }
 
+    /**
+     * Get the value
+     * @param mapper the function to apply
+     * @return the value
+     */
     public <R> R get(Function<T, R> mapper) {
         return mapper.apply(value);
     }
