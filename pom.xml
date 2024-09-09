@@ -6,7 +6,7 @@
 
     <groupId>com.eightbits.shared</groupId>
     <artifactId>stdlib</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -85,6 +85,12 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.12.6</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <distributionManagement>
